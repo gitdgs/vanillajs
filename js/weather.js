@@ -16,7 +16,6 @@ function onGeoOk(position) {
     fetch(url)
         .then(response => response.json())
         .then((data) => {
-            console.log(data);
             const weather = document.querySelector("#weather span:first-child");
             const wind = document.querySelector("#weather span:nth-child(2)");
             const city = document.querySelector("#weather span:last-child");
@@ -24,9 +23,7 @@ function onGeoOk(position) {
             city.innerText = `${data.name}`;
             wind.innerText = `💨${data.wind.speed} `;
             weather.innerText = `${data.weather[0].main} / 🌡️${data.main.temp}°`;
-
-            console.log(wind);
-
+            //console.log(wind);            
         });
     //wetube
     //console.log(url);

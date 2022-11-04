@@ -31,9 +31,7 @@ const quotes = [
 
 const quote = document.querySelector("#quote span:first-child");
 const author = document.querySelector("#quote span:last-child");
-
-console.log(quotes[Math.floor(Math.random() * quotes.length)]);
-
+// Random으로 표시
 const dodayQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = dodayQuote.quote;

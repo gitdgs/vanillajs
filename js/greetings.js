@@ -22,13 +22,6 @@ function paintGreetings(username) {
     greeting.innerText = `Hello ${username}`;
 }
 
-function handleLinkClick(event) {
-    event.preventDefault();
-    console.log(event);
-    alert("clicked");
-
-}
-
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 //EventListener 등록
@@ -39,5 +32,13 @@ if (savedUsername === null) {
     paintGreetings(savedUsername);
 }
 
+/*
+function handleLinkClick(event) {
+    event.preventDefault();
+    console.log(event);
+    alert("clicked");
+
+}
+*/
 //Link.addEventListener("click", handleLinkClick);
 //loginButton.addEventListener("click", onLoginBtnClick);
