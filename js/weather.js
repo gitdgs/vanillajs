@@ -29,7 +29,7 @@ function onGeoOk(position) {
 
         });
     //wetube
-    console.log(url);
+    //console.log(url);
 }
 //openweather.org
 //Api key: 54fdcb8f713b0df2e10487ad4eb584f0

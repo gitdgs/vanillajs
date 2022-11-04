@@ -12,15 +12,14 @@ function saveToDos() {
 function deleteToDo(event) {
     const li = event.target.parentElement;
     li.remove();
-    //console.log(li.id);    
     toDos = toDos.filter((toDo) => {
         return toDo.id !== parseInt(li.id)
     });
     saveToDos();
 }
 
+//To Do 등록
 function paintToDo(newTodo) {
-    //console.log("i Will paint" + newTodo)
     const li = document.createElement("li");
     li.id = newTodo.id;
     const span = document.createElement("span");
@@ -41,22 +40,20 @@ function handleToDoSubmit(event) {
         text: newTodo,
         id: Date.now(),
     }
-    //console.dir(toDos);
     toDos.push(newTodoObj);
     paintToDo(newTodoObj);
     saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit)
+
 function sayHello(item) {
     console.log("hello", item);
 }
 const savedToDos = localStorage.getItem(TODOS_KEY);
-//console.log(savedToDos);
+
 if (savedToDos) {
     const parsedToDos = JSON.parse(savedToDos);
     toDos = parsedToDos;
-    //console.log(parsedToDos);
     parsedToDos.forEach(paintToDo);
-    //parsedToDos.forEach((item) => console.log(item));
 }
